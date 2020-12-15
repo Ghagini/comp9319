@@ -1,0 +1,7 @@
+/usr/bin/time -p ~cs9319/a2/bwtdecode ~cs9319/a2/dna-100MB.bwt 100MB.txt
+
+/usr/bin/time -p ~cs9319/a2/bwtsearch ~cs9319/a2/dna-100MB.bwt < ~cs9319/a2/dna-tiny.input > test.output
+
+
+valgrind --tool=massif --pages-as-heap=yes --massif-out-file=memory.out ./bwtsearch ~cs9319/a2/dna-100MB.bwt < dna-tiny.input
+ms_print memory.out > memory.txt
